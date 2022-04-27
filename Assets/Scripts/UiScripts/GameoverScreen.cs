@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class GameoverScreen : Scren
 {
-    public event UnityAction RestartButtonClick;
+    public event UnityAction RestartButtonClicked;
 
     public override void Close()
     {
@@ -21,6 +21,6 @@ public class GameoverScreen : Scren
 
     protected override void OnButtonClick()
     {
-        RestartButtonClick?.Invoke();
+        RestartButtonClicked?.Invoke();
     }
 }

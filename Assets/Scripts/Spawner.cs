@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Spawner : ObjectPool
 {
-    [SerializeField] GameObject _prefab;
-    [SerializeField] float _secondsBetweenSpawn;
-    [SerializeField] Player _player;
+    [SerializeField] private  GameObject _prefab;
+    [SerializeField] private float _secondsBetweenSpawn;
+    [SerializeField] private Player _player;
 
     private Vector2 _spawnPoint;
     private float randomY;
@@ -15,12 +15,12 @@ public class Spawner : ObjectPool
 
     private void OnEnable()
     {
-        _player.Gameover += OnPlayerDestroy;
+        _player.Gameover += OnPlayerDestroyed;
     }
 
     private void OnDisable()
     {
-        _player.Gameover -= OnPlayerDestroy;
+        _player.Gameover -= OnPlayerDestroyed;
     }
 
     private void Start()
@@ -55,8 +55,8 @@ public class Spawner : ObjectPool
         prefab.transform.position = spawnPoint;
     }
 
-    private void OnPlayerDestroy()
+    private void OnPlayerDestroyed()
     {
-        ResetPool();
+        Reset();
     }
 }

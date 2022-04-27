@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0,0,-_speed);
     }
 
-    public void ReverseMove()
+    public void ReverseDirection()
     {
         _isMoving = !_isMoving;
     }

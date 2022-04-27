@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class StartScreen : Scren
 {
-    public event UnityAction PlayButtonClick;
+    public event UnityAction PlayButtonClicked;
 
     public override void Close()
     {
@@ -21,6 +21,6 @@ public class StartScreen : Scren
 
     protected override void OnButtonClick()
     {
-        PlayButtonClick?.Invoke();
+        PlayButtonClicked?.Invoke();
     }
 }

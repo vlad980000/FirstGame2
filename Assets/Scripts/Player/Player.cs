@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void RestartPlayer()
+    public void Reset()
     {
         gameObject.SetActive(true);
         _coinsCounter = 0;

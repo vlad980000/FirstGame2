@@ -11,15 +11,15 @@ public class Game : MonoBehaviour
 
     private void OnEnable()
     {
-        _startScreen.PlayButtonClick += OnPlayButtonClick;
-        _overScreen.RestartButtonClick += OnRestartButtonClick;
+        _startScreen.PlayButtonClicked += OnPlayButtonClick;
+        _overScreen.RestartButtonClicked += OnRestartButtonClick;
         _player.Gameover += OnGameover; 
     }
 
     private void OnDisable()
     {
-        _startScreen.PlayButtonClick -= OnPlayButtonClick;
-        _overScreen.RestartButtonClick -= OnRestartButtonClick;
+        _startScreen.PlayButtonClicked -= OnPlayButtonClick;
+        _overScreen.RestartButtonClicked -= OnRestartButtonClick;
         _player.Gameover -= OnGameover;
     }
 
@@ -45,14 +45,14 @@ public class Game : MonoBehaviour
     private void StartGame()
     {
         Time.timeScale = 1;
-        _player.RestartPlayer();
+        _player.Reset();
     }
 
     private void RestartSpawns()
     {
         foreach (var item in _spawns)
         {
-            item.ResetPool();
+            item.Reset();
         }
     }
 
